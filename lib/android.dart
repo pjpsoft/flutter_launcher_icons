@@ -300,15 +300,15 @@ List<String> transformAndroidManifestWithNewLauncherIcon(
 
 /// Retrieves the minSdk value from the Android build.gradle file
 int minSdk() {
-  final File androidGradleFile = File(constants.androidGradleFile);
-  final List<String> lines = androidGradleFile.readAsLinesSync();
-  for (String line in lines) {
-    if (line.contains('minSdkVersion')) {
-      // remove anything from the line that is not a digit
-      final String minSdk = line.replaceAll(RegExp(r'[^\d]'), '');
-      return int.parse(minSdk);
-    }
-  }
+  // final File androidGradleFile = File(constants.androidGradleFile);
+  // final List<String> lines = androidGradleFile.readAsLinesSync();
+  // for (String line in lines) {
+  //   if (line.contains('minSdkVersion')) {
+  //     // remove anything from the line that is not a digit
+  //     final String minSdk = line.replaceAll(RegExp(r'[^\d]'), '');
+  //     return int.parse(minSdk);
+  //   }
+  // }
   return 0; // Didn't find minSdk, assume the worst
 }
 
